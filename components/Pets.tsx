@@ -4,10 +4,11 @@ import LottieView from "lottie-react-native";
 import eatingAnimation from "../assets/lottie/eatingDog.json";
 import sleepingAnimation from "../assets/lottie/sleepingDog.json";
 import walkingAnimation from "../assets/lottie/walkingDog.json";
-import idleAnimation from "../assets/lottie/idleDog.json";
+import restingAnimation from "../assets/lottie/restingDog.json";
+import playingAnimation from "../assets/lottie/playingDog.json";
 
 type PetProps = {
-  action: "idle" | "eating" | "sleeping" | "walking";
+  action: "rest" | "eating" | "sleeping" | "walking" | "playing" | "resting";
 };
 
 const Pet: React.FC<PetProps> = ({ action }) => {
@@ -19,8 +20,12 @@ const Pet: React.FC<PetProps> = ({ action }) => {
         return sleepingAnimation;
       case "walking":
         return walkingAnimation;
+      case "playing":
+        return playingAnimation
+      case "resting":
+        return restingAnimation
       default:
-        return idleAnimation;
+        return restingAnimation;
     }
   };
 
